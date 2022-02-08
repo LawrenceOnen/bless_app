@@ -1,29 +1,21 @@
+import { Button } from "react-bootstrap";
 import Todo from "./components/Todo";
+
 
 function App(props) {
 //Create a new data list
-const taskList = props.tasks?.map(task => <Todo id={task.id} name={task.name} completed={task.completed} />)
-console.log(taskList);
+const taskList = props.tasks?.map(task => (
+  <Todo 
+    id={props.id} 
+    name={props.name} 
+    completed={props.completed}
+    />)
+    );
+
   return (  
     <div className="todoapp stack-large">
       <h1>BLL Incidence Reporting</h1>
-      <form>
-        <h2 className="label-wrapper">
-          <label htmlFor="new-todo-input" className="label__lg">
-            Report any incidence here
-          </label>
-        </h2>
-        <input
-          type="text"
-          id="new-todo-input"
-          className="input input__lg"
-          name="text"
-          autoComplete="off"
-        />
-        <button type="submit" className="btn btn__primary btn__lg">
-          Add
-        </button>
-      </form>
+      
       <div className="filters btn-group stack-exception">
         <button type="button" className="btn toggle-btn" aria-pressed="true">
           <span className="visually-hidden">Show </span>
