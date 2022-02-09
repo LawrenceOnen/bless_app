@@ -1,10 +1,15 @@
 import React from "react";
-import { Form } from "react-bootstrap";
 import FilterButton from "./FilterButton";
+
+
+let handleSubmit = (e) => {
+    e.preventDefault();
+    props.addTask("Say Hello");
+};
 
 function Form() {
     return (
-        <form>
+        <form  onSubmit={handleSubmit}>
         <h2 className="label-wrapper">
           <label htmlFor="new-todo-input" className="label__lg">
             Report any incidence here
@@ -17,7 +22,7 @@ function Form() {
           name="text"
           autoComplete="off"
         />
-        <FilterButton />
+        <FilterButton onClick={() => alert('Hi')}/>
       </form>
     );
 };
