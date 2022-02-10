@@ -2,12 +2,13 @@ import React from "react";
 import FilterButton from "./FilterButton";
 
 
-let handleSubmit = (e) => {
-    e.preventDefault();
-    props.addTask("Say Hello");
-};
 
-function Form() {
+function handleSubmit(e) {
+    e.preventDefault();
+    alert('Handling form submission');
+}
+
+function Form(props) {
     return (
         <form  onSubmit={handleSubmit}>
         <h2 className="label-wrapper">
