@@ -2,10 +2,10 @@ import React from "react";
 import FilterButton from "./FilterButton";
 
 
-
 function handleSubmit(e) {
     e.preventDefault();
     alert('Handling form submission');
+    this.props.addTask('Say Hello');
 }
 
 function Form(props) {
